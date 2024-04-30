@@ -31,7 +31,7 @@ def compare_coeffs_of_2_groups(
     comparison_var: str,
     comparison_var_vals: list,
     outcome_variable: str,
-    re_columns: list[str],
+    mm_re_columns: list[str],
     link_dist=Normal(),
 ):
     assert (
@@ -59,9 +59,9 @@ def compare_coeffs_of_2_groups(
     res = run_linear_mm(
         df.loc[lambda x: x[comparison_var] != np.nan].loc[
             lambda x: x[comparison_var] != "nan"
-        ],
+        ],  # type: ignore
         outcome_variable,
-        re_columns,
+        mm_re_columns,
         ling_featurse_formula_interactions,
         model_res_var_name="j_model_mm",
         link_dist=link_dist,
@@ -77,12 +77,13 @@ def compare_coeffs_of_2_groups(
         centralize_outcome=True,
     )
     coeffs = res[0]
-    coeffs = coeffs.loc[
-        lambda x: x["Name"].str.contains("&") and x["Name"].str.contains("indicator")
-    ]
 
+    coeffs = coeffs.loc[lambda x: x["Name"].str.contains("&")]
+    coeffs = coeffs.loc[lambda x: x["Name"].str.contains("indicator")]
     # apply a function on Name that leaves only the first part before the &
-    # coeffs['Name'] = coeffs['Name'].apply(lambda x: x.split('&')[0][:-1] if '&' in x else x)
+    coeffs["Name"] = coeffs["Name"].apply(
+        lambda x: x.split("&")[0][:-1] if "&" in x else x
+    )
 
     # to coeffs add a column var_0 and var_1 for the two values of comparison_var_vals
     coeffs["var_0"] = comparison_var_vals[0]
@@ -92,12 +93,11 @@ def compare_coeffs_of_2_groups(
     return coeffs
 
 
-# go over all pairs of first_second_reading_types and run a linear mixed model for each pair. Use the function compare_coeffs_of_2_groups
 def coeff_diff_stat_test(
     df_input: pd.DataFrame,
     comparison_var: str,
     outcome_variable: str,
-    re_columns: list[str],
+    mm_re_columns: list[str],  # noqa: F811
     link_dist=Normal(),
 ):
     """This function runs a linear mixed model for each pair of values in comparison_var and returns a dataframe with the coefficients and p-values of the difference between the coefficients of the two groups.
@@ -123,9 +123,14 @@ def coeff_diff_stat_test(
         if str(pair[0]) not in [np.nan, "nan"] and str(pair[1]) not in [np.nan, "nan"]:
             coeff_diff_test_df_list.append(
                 compare_coeffs_of_2_groups(
-                    df, comparison_var, pair, outcome_variable, re_columns
+                    df,
+                    comparison_var,
+                    pair,
+                    outcome_variable,
+                    mm_re_columns,
+                    link_dist,  # type: ignore
                 )
-            )
+            )  # type: ignore
     coeff_diff_test_df = pd.concat(coeff_diff_test_df_list)
     signif_coeffs = coeff_diff_test_df.loc[lambda x: x["Pr(>|z|)"] < 0.05]
     return coeff_diff_test_df, signif_coeffs
