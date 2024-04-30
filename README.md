@@ -1,11 +1,14 @@
 <!-- ⚠️ This README has been generated from the file(s) "blueprint.md" ⚠️-->
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#eye_movements_in_repeated_reading)
 
-# ➤ Eye_Movements_in_Repeated_Reading
+[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#eye_movements_in_repeated_reading)
 
 [![Ruff](https://github.com/lacclab/Eye_Movements_in_Repeated_Reading/actions/workflows/ruff.yml/badge.svg?branch=main)](https://github.com/lacclab/Eye_Movements_in_Repeated_Reading/actions/workflows/ruff.yml)
 
-This repo contains all of the code used in the paper "Déjà Vu: Eye Movements in Repeated Reading" (CogSci2024) by Yoav Meiri, Yevgeni Berzak
+# Déjà Vu: Eye Movements in Repeated Reading
+## Yoav Meiri<sup>1</sup>, Yevgeni Berzak<sup>1,2</sup>
+### <sup>1</sup>Faculty of Data and Decision Sciences, Technion - Israel Institute of Technology, Haifa, Israel <br> <sup>2</sup>Department of Brain and Cognitive Sciences, Massachusetts Institute of Technology, Cambridge, USA
+
+This repository contains all the code used in the paper "Déjà Vu: Eye Movements in Repeated Reading" (CogSci2024) by Yoav Meiri, Yevgeni Berzak
 
 Contact: meiri.yoav@campus.technion.ac.il
 
