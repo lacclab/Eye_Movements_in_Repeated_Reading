@@ -1,10 +1,8 @@
 import pandas as pd
-import os
 from tqdm import tqdm
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import numpy as np
-import sys
 from julia_linear_mm import Normal, run_linear_mm, Poisson, Bernoulli
 
 # ignore pandas warnings
