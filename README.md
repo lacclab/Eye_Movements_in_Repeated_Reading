@@ -4,7 +4,7 @@
 
 [![Ruff](https://github.com/lacclab/Eye_Movements_in_Repeated_Reading/actions/workflows/ruff.yml/badge.svg?branch=main)](https://github.com/lacclab/Eye_Movements_in_Repeated_Reading/actions/workflows/ruff.yml)
 
-# ➤ Déjà Vu: Eye Movements in Repeated Reading
+# Déjà Vu: Eye Movements in Repeated Reading
 ## Yoav Meiri<sup>1</sup>, Yevgeni Berzak<sup>1,2</sup>
 ### <sup>1</sup>Faculty of Data and Decision Sciences, Technion - Israel Institute of Technology, Haifa, Israel <br> <sup>2</sup>Department of Brain and Cognitive Sciences, Massachusetts Institute of Technology, Cambridge, USA
 
