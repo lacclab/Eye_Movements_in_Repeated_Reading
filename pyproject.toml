@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "OneStopSurprisal"
+version = "0.1.0"
+authors = [
+  { name="Yoav Meiri", email="meiri.yoav@campus.technion.ac.il" },
+]
+
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License", # TODO temporary
+    "Operating System :: OS Independent",
+]
+
+dependencies = [
+  # TODO add dependencies
+]
+
+[tool.ruff.lint.per-file-ignores]
+"src/julia_linear_mm.py" = ["E402", "F401"]
+
+
+[project.urls]
+Homepage = "https://github.com/lacclab/Eye_Movements_in_Repeated_Reading"
+repository = "https://github.com/lacclab/Eye_Movements_in_Repeated_Reading"
+"Bug Tracker" = "https://github.com/lacclab/Eye_Movements_in_Repeated_Reading/issues"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
