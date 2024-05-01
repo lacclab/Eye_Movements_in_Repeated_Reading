@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "OneStopSurprisal"
+name = "Eye_Movements_in_Repeated_Reading"
 version = "0.1.0"
 authors = [
   { name="Yoav Meiri", email="meiri.yoav@campus.technion.ac.il" },
