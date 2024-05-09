@@ -37,6 +37,8 @@ The `src` folder contains three Jupyter notebooks, one for each section of the p
 
 The files `julia_linear_mm` and `calc_means_main` contain Python code wrapped around Julia code, which was used for all statistical tests in the paper. The core component in these scripts is the `julia_linear_mm/run_linear_mm` function. This function fits a linear mixed model using the Julia package MixedModels.jl, where all model properties (formula, random effects, linking function, coding system, etc.) are provided using Python objects.
 
+All the mixed-models analyses in this repository were enabled by the `MixedModels.j` (v4.22.2) package in `Julia`
+
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#prerequisites)
 
