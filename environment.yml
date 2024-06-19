@@ -1,4 +1,4 @@
-name: et_rr
+name: deja_vu
 channels:
   - pytorch
   - plotly
@@ -26,11 +26,15 @@ dependencies:
   - hydra-core=1.3
   - ipykernel
   - mypy
+  - pyarrow
   - pandas-stubs # for type checking
   - types-tqdm # for type checking
   - typed-argument-parser
+  - tqdm
   - pip:
+      - dropbox
       - git+https://github.com/lacclab/process-onestop-sr-report.git # if using ssh-key note to change this and all repos in the way
       - git+https://github.com/lacclab/text-metrics.git
       - rich
+      - kaleido
       - julia # python3 -m pip install julia
