@@ -20,8 +20,6 @@ Contact: meiri.yoav@campus.technion.ac.il
 
 ### Data Preprocessing
 
-Here's the text with improved coherence and readability:
-
 We utilize OneStop, a broad-coverage corpus of eye movements in reading, collected using an EyeLink 1000 Plus eye tracker (SR Research) at a sampling rate of 1000Hz. The dataset includes 360 L1 English participants reading materials from the OneStopQA corpus.
 
 In the `src/process_IA_rep_for_reread_analysis` directory, the main function `process_df_for_reread_analysis` receives an SR interest area report as input and performs the following:
