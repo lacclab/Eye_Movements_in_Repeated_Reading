@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-
+IA_REPORT_PATH = "ln_shared_data/onestop/processed/ia_data_enriched_360_18042024.csv"
 
 colors = [
     "#347BB9",
@@ -116,5 +116,3 @@ all_outcomes = [
     "IA_ZERO_TF",
     "IA_REGRESSION_OUT_FULL_COUNT",
 ]
-
-
