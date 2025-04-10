@@ -2,7 +2,7 @@ import itertools
 from tqdm import tqdm
 import numpy as np
 import pandas as pd
-from julia_linear_mm import Normal, run_linear_mm
+from onestop.linear_mm_utils.julia_linear_mm import run_linear_mm, Normal
 
 
 class config:
@@ -34,9 +34,9 @@ def compare_coeffs_of_2_groups(
     mm_re_columns: list[str],
     link_dist=Normal(),
 ):
-    assert (
-        len(comparison_var_vals) == 2
-    ), "comparison_var_vals must be a list of 2 values"
+    assert len(comparison_var_vals) == 2, (
+        "comparison_var_vals must be a list of 2 values"
+    )
 
     df = df_input.copy()
     df["indicator"] = df[comparison_var].apply(

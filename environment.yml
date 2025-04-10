@@ -1,6 +1,5 @@
 name: deja_vu
 channels:
-  - pytorch
   - plotly
   - anaconda
   - huggingface
@@ -32,9 +31,10 @@ dependencies:
   - typed-argument-parser
   - tqdm
   - pip:
+      - nbformat
       - dropbox
-      - git+https://github.com/lacclab/process-onestop-sr-report.git # if using ssh-key note to change this and all repos in the way
-      - git+https://github.com/lacclab/text-metrics.git
       - rich
       - kaleido
-      - julia # python3 -m pip install julia
+      - juliacall
+      - git+https://github.com/lacclab/OneStop-Eye-Movements.git
+      - -e .

@@ -66,9 +66,16 @@ All the mixed-models analyses in this repository were enabled by the `MixedModel
     ```bash
     mamba env create -f environment.yaml
     ```
+3. **Install Necessary Packages**
 
-3. **Get the Data**
+    Install the necessary Julia packages for running linear mixed models:
+
+    ```bash
+    python -c 'from juliacall import Main as jl; jl.seval("""import Pkg; Pkg.add("MixedModels"); Pkg.add("DataFrames"); Pkg.add("Distributions")""")'
+    ```
+
+4. **Get the Data**
     There is not yet a public version of the data. Hopefully, there will be one in the following months!
 
-4. **Rerunning The Code**
+5. **Rerunning The Code**
     As stated, each one of the 3 notebooks contains all of the code needed to reproduce the results of the section it belongs to.
