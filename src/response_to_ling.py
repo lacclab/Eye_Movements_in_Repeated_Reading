@@ -2,7 +2,12 @@ import itertools
 from tqdm import tqdm
 import numpy as np
 import pandas as pd
-from onestop.linear_mm_utils.julia_linear_mm import run_linear_mm, Normal
+from onestop.linear_mm_utils.julia_linear_mm import run_linear_mm
+from juliacall import Main as jl
+
+jl.seval("using MixedModels")
+Bernoulli = jl.seval("Bernoulli")
+Normal = jl.seval("Normal")
 
 
 class config:

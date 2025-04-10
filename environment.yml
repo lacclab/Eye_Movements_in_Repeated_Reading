@@ -30,6 +30,8 @@ dependencies:
   - types-tqdm # for type checking
   - typed-argument-parser
   - tqdm
+  - statsmodels
+  - pyGAM
   - pip:
       - nbformat
       - dropbox

@@ -71,7 +71,7 @@ All the mixed-models analyses in this repository were enabled by the `MixedModel
     Install the necessary Julia packages for running linear mixed models:
 
     ```bash
-    python -c 'from juliacall import Main as jl; jl.seval("""import Pkg; Pkg.add("MixedModels"); Pkg.add("DataFrames"); Pkg.add("Distributions")""")'
+    python -c 'from juliacall import Main as jl; jl.seval("""import Pkg; Pkg.add("MixedModels"); Pkg.add("DataFrames"); Pkg.add("Distributions"); Pkg.add("CategoricalArrays")""")'
     ```
 
 4. **Get the Data**

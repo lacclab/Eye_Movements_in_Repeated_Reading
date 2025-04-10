@@ -19,14 +19,6 @@ colors = [
     "midnightblue",
 ]
 
-all_outcomes = [
-    "IA_FIRST_FIXATION_DURATION",
-    "IA_FIRST_RUN_DWELL_TIME",
-    "IA_FIRST_PASS_GAZE_DURATION",
-    "IA_RUN_COUNT",
-    "IA_ZERO_TF",
-    "IA_REGRESSION_OUT_FULL_COUNT",
-]
 
 re_columns = ["unique_paragraph_id", "subject_id"]
 
@@ -92,10 +84,20 @@ outcome_units_mapping.update(zscore_units_mapping)
 
 explanatory_var_class_names = {
     "reread": {
-        0: "First Reading",
+        0: "First reading",
         1: "Repeated Reading",
         "0": "First Reading",
         "1": "Repeated Reading",
+    },
+    "has_preview_reread": {
+        "Gathering_1": "Gathering, RR",
+        "Gathering_0": "Gathering, Not RR",
+        "Hunting_1": "Hunting, RR",
+        "Hunting_0": "Hunting, Not RR",
+    },
+    "has_preview": {
+        "Hunting": "Hunting",
+        "Gathering": "Gathering",
     },
 }
 
@@ -106,6 +108,7 @@ explanatory_var_names = {
     "first_second_reading_types": "First (<10, 10) and Second (11, 12) Readings",
     "article_ind_group_of_first_reading": "Article Index of the First Reading",
     "reread": "Reread",
+    "has_preview_reread": "Condition and Reread",
 }
 
 all_outcomes = [
